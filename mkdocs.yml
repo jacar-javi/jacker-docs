@@ -1,0 +1,148 @@
+site_name: Jacker = Jacar + Docker
+site_description: Jacker = Jacar + Docker
+site_author: Javier Cañete Arroyo
+site_url: https://jacker.jacar.es
+
+copyright: 'Jacar Systems • Copyright &copy; 2024'
+
+repo_name: 'jacar-javi/jacker'
+repo_url: 'https://github.com/jacar-javi/jacker'
+
+# https://squidfunk.github.io/mkdocs-material/
+theme:
+  name: material
+  language: en
+  palette:
+  # Palette toggle for automatic mode
+  - media: "(prefers-color-scheme)"
+    toggle:
+      icon: material/brightness-auto
+      name: Switch to light mode
+  # Palette toggle for light mode
+  - media: "(prefers-color-scheme: light)"
+    scheme: default
+    toggle:
+      icon: material/brightness-7
+      name: Switch to dark mode
+
+  # Palette toggle for dark mode
+  - media: "(prefers-color-scheme: dark)"
+    scheme: slate
+    toggle:
+      icon: material/brightness-4
+      name: Switch to system preference
+  features:
+    - header.autohide
+    - navigation.footer
+    - navigation.expand
+    - navigation.path
+    - navigation.prune
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - announce.dismiss
+    - content.tooltips
+    - content.code.copy
+    - search.share
+    - search.highlight
+    - content.tooltips
+    - toc.follow
+  icon:
+    repo: fontawesome/brands/github
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+
+# Árbol de páginas
+nav:
+  - 'Welcome': 'index.md'
+  - 'First Steps':
+      - 'Clone Jacker repo' : 'first-steps/clone.md'
+      - 'Install Jacier dependencies' : 'first-steps/dependencies.md'
+      - 'Prepare your system' : 'first-steps/prepare.md'
+      - 'Install Jacker' : 'first-steps/install.md'
+      - 'Import Grafana Dashboards' : 'first-steps/grafana.md'
+
+markdown_extensions:
+  - abbr
+  - attr_list
+  - admonition
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.magiclink
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.details
+  - pymdownx.extra
+  - pymdownx.betterem
+  - pymdownx.snippets
+
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - footnotes
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+      pipeline:
+        - stemmer
+        - stopWordFilter
+        - trimmer
+
+extra:
+  social:
+    - icon: fontawesome/solid/globe
+      link: https://jacker.jacar.es
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/jacar-javi
+  analytics:
+    provider: google
+    property: G-FPQHTEH4PT
+    title: Was this page helpful?
+    ratings:
+      - icon: material/emoticon-happy-outline
+        name: This page was helpful
+        data: 1
+        note: >-
+          Thanks for your feedback!
+      - icon: material/emoticon-sad-outline
+        name: This page could be improved
+        data: 0
+        note: >- 
+          Thanks for your feedback!
+  consent:
+    title: Cookie consent
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+
+extra_css:
+  - assets/css/extra.css
